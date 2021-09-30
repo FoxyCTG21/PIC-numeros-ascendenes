@@ -12,9 +12,17 @@
 #define _XTAL_FREQ 48000000
 
 void display(int num){
+    LATB = 0b0000000;
     
+    if(num == 0){
+        LATB = 0b0111111;
+    }
 }
 
 void main(void) {
-    return;
+    
+    TRISB=0b00000000;
+    
+    display(0);
+    
 }
