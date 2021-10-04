@@ -5014,7 +5014,6 @@ extern __attribute__((nonreentrant)) void _delay3(unsigned char);
 #pragma config LVP = OFF
 
 
-
 void display(int num){
     LATB = 0b0000000;
 
@@ -5052,8 +5051,12 @@ void display(int num){
 
 void main(void) {
 
+    ADCON1 = 0x0F;
     TRISB=0b00000000;
     TRISAbits.TRISA2 = 1;
+    TRISAbits.TRISA3 = 1;
+    TRISAbits.TRISA4 = 1;
+    TRISAbits.TRISA5 = 1;
 
     while(1){
 
@@ -5062,21 +5065,23 @@ void main(void) {
 
 
 
+        int resultado = 0;
 
-        int tiempo = 500;
-
-
-        for(int num = 0; num <= 9; num++){
-            display(num);
-            _delay((unsigned long)((tiempo)*(48000000/4000.0)));
-            if(PORTAbits.RA2 == 1){
-                num = 200;
-            } else{
-                num = 500;
-            }
+        if(PORTAbits.RA2 == 1){
+            resultado + 1;
+        }
+        if(PORTAbits.RA3 == 1){
+            resultado + 2;
+        }
+        if(PORTAbits.RA4 == 1){
+            resultado + 4;
+        }
+        if(PORTAbits.RA5 == 1){
+            resultado + 8;
         }
 
-
+        display(resultado);
+        _delay((unsigned long)((500)*(48000000/4000.0)));
     }
 
 }

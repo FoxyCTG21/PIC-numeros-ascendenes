@@ -3,3 +3,89 @@
 [d edition pro ]
 [d chip 18F2550 ]
 [d frameptr 4065 ]
+"4 C:\Program Files\Microchip\xc8\v2.10\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.10\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v2.10\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v2.10\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v2.10\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v2.10\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.10\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v2.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.10\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v2.10\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"15 C:\Users\Usuario\Documents\Foxy\PIC\PIC numero ascendentes.X\PIC_numero_ascendente.c
+[v _display display `(v  1 e 1 0 ]
+"50
+[v _main main `(v  1 e 1 0 ]
+[s S35 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+]
+"2156 C:\Program Files\Microchip\xc8\v2.10\pic\include\pic18f2550.h
+[s S71 . 1 `uc 1 AN0 1 0 :1:0 
+`uc 1 AN1 1 0 :1:1 
+`uc 1 AN2 1 0 :1:2 
+`uc 1 AN3 1 0 :1:3 
+`uc 1 T0CKI 1 0 :1:4 
+`uc 1 AN4 1 0 :1:5 
+`uc 1 OSC2 1 0 :1:6 
+]
+[s S79 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 VREFM 1 0 :1:2 
+`uc 1 VREFP 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 LVDIN 1 0 :1:5 
+]
+[s S85 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 HLVDIN 1 0 :1:5 
+]
+[s S88 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+]
+[u S90 . 1 `S35 1 . 1 0 `S71 1 . 1 0 `S79 1 . 1 0 `S85 1 . 1 0 `S88 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES90  1 e 1 @3968 ]
+"2647
+[v _LATB LATB `VEuc  1 e 1 @3978 ]
+[s S27 . 1 `uc 1 TRISA0 1 0 :1:0 
+`uc 1 TRISA1 1 0 :1:1 
+`uc 1 TRISA2 1 0 :1:2 
+`uc 1 TRISA3 1 0 :1:3 
+`uc 1 TRISA4 1 0 :1:4 
+`uc 1 TRISA5 1 0 :1:5 
+`uc 1 TRISA6 1 0 :1:6 
+]
+"2867
+[u S43 . 1 `S27 1 . 1 0 `S35 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES43  1 e 1 @3986 ]
+"3035
+[v _TRISB TRISB `VEuc  1 e 1 @3987 ]
+"5400
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
+"50 C:\Users\Usuario\Documents\Foxy\PIC\PIC numero ascendentes.X\PIC_numero_ascendente.c
+[v _main main `(v  1 e 1 0 ]
+{
+"85
+} 0
+"15
+[v _display display `(v  1 e 1 0 ]
+{
+[v display@num num `i  1 p 2 0 ]
+"48
+} 0

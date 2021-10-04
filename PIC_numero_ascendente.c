@@ -11,7 +11,6 @@
 #pragma config FOSC = HSPLL_HS
 #pragma config LVP = OFF
 #define _XTAL_FREQ 48000000
-#define ADCON1 = 0x0F
 
 void display(int num){
     LATB = 0b0000000;
@@ -50,8 +49,12 @@ void display(int num){
 
 void main(void) {
     
+    ADCON1 = 0x0F;
     TRISB=0b00000000;
     TRISAbits.TRISA2 = 1;
+    TRISAbits.TRISA3 = 1;
+    TRISAbits.TRISA4 = 1;
+    TRISAbits.TRISA5 = 1;
     
     while(1){
         /* Esto hace un incremento de 0 al 9 cada 600 milisegundos
@@ -60,21 +63,23 @@ void main(void) {
             __delay_ms(600);
         }
         */
+        int resultado = 0;
         
-        int tiempo = 500;
-        
-        
-        for(int num = 0; num <= 9; num++){
-            display(num);
-            __delay_ms(tiempo);
-            if(PORTAbits.RA2 == 1){
-                num = 200;
-            } else{
-                num = 500;
-            }
+        if(PORTAbits.RA2 == 1){
+            resultado + 1;
+        }
+        if(PORTAbits.RA3 == 1){
+            resultado + 2;
+        }
+        if(PORTAbits.RA4 == 1){
+            resultado + 4;
+        }
+        if(PORTAbits.RA5 == 1){
+            resultado + 8;
         }
         
-        
+        display(resultado);
+        __delay_ms(500);
     }
     
 }
