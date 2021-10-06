@@ -12,6 +12,7 @@
 #pragma config LVP = OFF
 #define _XTAL_FREQ 48000000
 
+//Libreria para el display placa MKBot Trial 3.1
 void display(int num){
     LATB = 0b0000000;
     
@@ -45,19 +46,23 @@ void display(int num){
     if(num == 9){
         LATB = 0b1100111;
     }
+    if(num > 9){
+        LATB = 0b1110001;
+    }
 }
 
 void main(void) {
     
     int resultado = 0;
-    ADCON1 = 0x0F;
-    TRISB=0b00000000;
-    TRISAbits.TRISA2 = 1;
+    ADCON1 = 0x0F; //Utilizamos esto para desabilitar los puertos analogicos
+    TRISB=0b00000000; //Asignamos salida los puertos B
+    TRISAbits.TRISA2 = 1; //Asignamos los puertos A como entrada
     TRISAbits.TRISA3 = 1;
     TRISAbits.TRISA4 = 1;
     TRISAbits.TRISA5 = 1;
     
     while(1){
+        
         /* Esto hace un incremento de 0 al 9 cada 600 milisegundos
         for(int num = 0; num <= 9; num++){
             display(num);
@@ -65,27 +70,23 @@ void main(void) {
         }
         */
         
+        //Dependiendo de si esta pulsado, sumamos su valor.
         if(PORTAbits.RA5 == 0){
             resultado = resultado + 1;
-        //    display(1);
         }
         if(PORTAbits.RA4 == 0){
             resultado = resultado + 2;
-        //    display(2);
         }
         if(PORTAbits.RA3 == 0){
             resultado = resultado + 4;
-        //    display(3);
         }
         if(PORTAbits.RA2 == 0){
-            resultado = resultado + 8;
-        //    display(4);
+            resultado = resultado + 8;        
         }
         
+        //Lo ingresamos en la libreria display y reseteamos el resultado
         display(resultado);
         resultado = 0;
-        
-        //display(resultado);
     }
     
 }
