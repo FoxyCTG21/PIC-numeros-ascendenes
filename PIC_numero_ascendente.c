@@ -49,6 +49,7 @@ void display(int num){
 
 void main(void) {
     
+    int resultado = 0;
     ADCON1 = 0x0F;
     TRISB=0b00000000;
     TRISAbits.TRISA2 = 1;
@@ -63,23 +64,28 @@ void main(void) {
             __delay_ms(600);
         }
         */
-        int resultado = 0;
         
-        if(PORTAbits.RA2 == 1){
-            resultado + 1;
+        if(PORTAbits.RA5 == 0){
+            resultado = resultado + 1;
+        //    display(1);
         }
-        if(PORTAbits.RA3 == 1){
-            resultado + 2;
+        if(PORTAbits.RA4 == 0){
+            resultado = resultado + 2;
+        //    display(2);
         }
-        if(PORTAbits.RA4 == 1){
-            resultado + 4;
+        if(PORTAbits.RA3 == 0){
+            resultado = resultado + 4;
+        //    display(3);
         }
-        if(PORTAbits.RA5 == 1){
-            resultado + 8;
+        if(PORTAbits.RA2 == 0){
+            resultado = resultado + 8;
+        //    display(4);
         }
         
         display(resultado);
-        __delay_ms(500);
+        resultado = 0;
+        
+        //display(resultado);
     }
     
 }
